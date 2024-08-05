@@ -32,7 +32,7 @@ class AddNoteActivity : AppCompatActivity() {
                 Toast.makeText(this, "Note Saved", Toast.LENGTH_SHORT).show()
             } else {
                 val builder = AlertDialog.Builder(this)
-                builder.setTitle("Error")
+                builder.setTitle("Error.")
                 builder.setMessage("Title and content must not be empty")
                 builder.setPositiveButton("OK") { dialog, _ ->
                     dialog.dismiss()
