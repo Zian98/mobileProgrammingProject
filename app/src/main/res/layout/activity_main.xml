@@ -11,11 +11,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
         android:fontFamily="@font/poppins"
         android:text="Notes."
         android:layout_marginStart="18dp"
         android:textColor="@color/orange"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+    />
+
 
     <ImageView
         android:id="@+id/emptyImageView"

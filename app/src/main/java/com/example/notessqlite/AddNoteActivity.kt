@@ -1,5 +1,6 @@
 package com.example.notessqlite
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.Toast
@@ -40,6 +41,10 @@ class AddNoteActivity : AppCompatActivity() {
                 val alertDialog = builder.create()
                 alertDialog.show()
             }
+        }
+        binding.goBackButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
     }

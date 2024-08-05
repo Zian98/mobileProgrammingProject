@@ -1,5 +1,6 @@
 package com.example.notessqlite
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -49,6 +50,10 @@ class UpdateNoteActivity : AppCompatActivity() {
                 alertDialog.show()
             }
         }
-
+        
+        binding.goBackButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
