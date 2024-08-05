@@ -43,9 +43,6 @@
                 android:layout_height="24dp"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/baseline_delete_24" />
-
-
-
         </RelativeLayout>
 
         <TextView
@@ -54,7 +51,6 @@
             android:layout_height="wrap_content"
             android:text="Content"
             android:fontFamily="@font/poppins"
-            android:maxLines="3"
             android:layout_marginTop="4dp" />
 
     </LinearLayout>
