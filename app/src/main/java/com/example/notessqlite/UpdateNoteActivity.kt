@@ -2,6 +2,7 @@ package com.example.notessqlite
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.notessqlite.databinding.ActivityUpdateNoteBinding
 
@@ -29,12 +30,25 @@ class UpdateNoteActivity : AppCompatActivity() {
         binding.updateContentEditText.setText(note.content)
 
         binding.updateSaveButton.setOnClickListener {
-            val newTitle  = binding.updateTitleEditText.text.toString()
+            val newTitle = binding.updateTitleEditText.text.toString()
             val newContent = binding.updateContentEditText.text.toString()
-            val updatedNote = Note(noteId, newTitle, newContent)
-            db.updateNote(updatedNote)
-            finish()
-            Toast.makeText(this, "Changes Saved", Toast.LENGTH_SHORT).show()
+
+            if (newTitle.isNotBlank() && newContent.isNotBlank()) {
+                val updatedNote = Note(noteId, newTitle, newContent)
+                db.updateNote(updatedNote)
+                finish()
+                Toast.makeText(this, "Changes Saved", Toast.LENGTH_SHORT).show()
+            } else {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Error")
+                builder.setMessage("Title and content must not be empty")
+                builder.setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                val alertDialog = builder.create()
+                alertDialog.show()
+            }
         }
+
     }
 }
