@@ -27,6 +27,7 @@
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/orange"
                 android:textSize="18sp"
+                android:maxLines="1"
                 android:textStyle="bold" />
 
             <ImageView
